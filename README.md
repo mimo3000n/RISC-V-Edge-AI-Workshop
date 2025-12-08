@@ -25,15 +25,49 @@ The program extends to neural networks on RISC-V, guided by instructor-supplied 
 Graduates leave with a coherent portfolio: quantized models, deployment scripts and optimization narratives demonstrating readiness for edge AI roles. We include templates for Neural network model conversion, VSDSquadron deployment, and memory reports to accelerate product development. Whether targeting IoT development, embedded systems, or edge AI research, this workshop delivers practical RISC-V deployment experience with globally portable evidence of competence.
 
 ## Edge AI Orientation & Hardware Primer
+<details>
+<summary>Edge AI Orientation & Hardware Primer</summary>
+
+</details>
 
 ## ML Foundations (Regression & Optimization)
+<details>
+<summary>ML Foundations (Regression & Optimization)</summary>
+
+</details>
 
 ## From Regression to Classification (KNN → SVM)
+<details>
+<summary>From Regression to Classification (KNN → SVM)</summary>
+
+</details>
 
 ## Memory-Constrained ML & Quantization Basics
+<details>
+<summary>Memory-Constrained ML & Quantization Basics</summary>
+
+</details>
 
 ## Neural Networks on RISC-V Microcontrollers
+<details>
+<summary>Neural Networks on RISC-V Microcontrollers</summary>
+
+</details>
 
 ## Advanced Quantization & Deployment
+<details>
+<summary>Advanced Quantization & Deployment</summary>
+
+</details>
+
 
 ## Capstone & Next Steps
+<details>
+<summary>Capstone & Next Steps</summary>
+
+</details>
+
+
+## Acknowledgments
+
+- ### Kunal Ghosh, Director, VSD Corp. Pvt. Ltd.
