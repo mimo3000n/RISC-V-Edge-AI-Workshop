@@ -28,11 +28,28 @@ Graduates leave with a coherent portfolio: quantized models, deployment scripts 
 <details>
 <summary>Edge AI Orientation & Hardware Primer</summary>
 
+- AI On A Microchip - Edge Computing With VSDSquadron Pro RISC-V Board
+
+
+- Understanding Your RISC-V Board - Prerequisites to AI on 16KB RAM
+
 </details>
 
 ## ML Foundations (Regression & Optimization)
 <details>
 <summary>ML Foundations (Regression & Optimization)</summary>
+
+- Best-Fitting Lines 101 - Getting Started With ML
+  
+- Gradient Descent Unlocked - Build Your First AI Model From Scratch
+  
+- Visualizing Gradient Descent in Action
+  
+- Predicting Startup Profits – AI for Business Decisions
+  
+- Degree Up - Fitting Complex Patterns for Edge AI
+  
+- From Python to Silicon - Your Model Runs on RISC-V (Need VSDSQ Board)
 
 </details>
 
