@@ -57,11 +57,33 @@ Graduates leave with a coherent portfolio: quantized models, deployment scripts 
 <details>
 <summary>From Regression to Classification (KNN → SVM)</summary>
 
+- From Regression to Classification - Your First Binary AI Model
+
+- Implementing KNN Classifier in Python - Smarter Decision Boundaries
+
+- From KNN to SVM - Smarter Models for Embedded Boards
+
+- Deploying SVM Models on VSDSquadron PRO Boards - From Python to C (Need VSDSQ Board)
+
+- Handwritten Digit Recognition with SVM - From MNIST to Embedded Boards
+
+- Running MNIST Digit Recognition on the VSDSquadron PRO Board
+
 </details>
 
 ## Memory-Constrained ML & Quantization Basics
 <details>
 <summary>Memory-Constrained ML & Quantization Basics</summary>
+
+- Beating RAM Limits - Quantizing ML Models for Embedded Systems
+
+- Quantization Demystified - Fitting AI Models on Tiny Devices
+
+- Post-Training Quantization - From 68KB Overflow to MCU-Ready AI
+
+- Fitting AI into 16KB RAM - The Final Embedded ML Optimization (Need VSDSQ Board)
+
+- Regression to Real-Time Recognition - A Complete Embedded ML Recap
 
 </details>
 
