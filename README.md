@@ -26,7 +26,7 @@ Graduates leave with a coherent portfolio: quantized models, deployment scripts 
 
 ## Installation and Settings for Freedom Studio
 <details>
-<summary>Installation and Settings for Freedom Studio</summary>
+<summary>Installation and Settings - Freedom Studio</summary>
 
 ### Install needed USB Driver
 
