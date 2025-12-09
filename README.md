@@ -24,6 +24,62 @@ The program extends to neural networks on RISC-V, guided by instructor-supplied 
 
 Graduates leave with a coherent portfolio: quantized models, deployment scripts and optimization narratives demonstrating readiness for edge AI roles. We include templates for Neural network model conversion, VSDSquadron deployment, and memory reports to accelerate product development. Whether targeting IoT development, embedded systems, or edge AI research, this workshop delivers practical RISC-V deployment experience with globally portable evidence of competence.
 
+## Installation and Settings for Freedom Studio
+<details>
+<summary>Installation and Settings for Freedom Studio</summary>
+
+### Install needed USB Driver
+
+- Download Zadig from "https://zadig.akeo.ie/"
+  Open Zadig from the location of the folder where you downloaded it. Click on ”Options” tab and select ”List All Devices”. Then select ”Dual RS-232-HS (Interface 0). Choose ”libusb-win32” software. Finally click on ”Install or Reinstall Driver”.
+
+&nbsp;
+<img width="578" height="256" alt="image" src="https://github.com/user-attachments/assets/76c895ef-0082-4666-9fe1-f278584602bb" />
+
+- Download Freedom Studio via this link "https://vsd-labs.sgp1.cdn.digitaloceanspaces.com/vsd-labs/VSDSquadronPRO.tar.gz"
+
+- extract Freedom Studion & folder structure shouldlook like this
+
+&nbsp;
+<img width="857" height="648" alt="image" src="https://github.com/user-attachments/assets/63e49a26-34ee-4ad6-a3a5-48ac0332d88d" />
+
+- start "FreedomStudio-3-1-1.exe"
+
+- create a new project "Validation Software Project"
+
+&nbsp;
+ <img width="551" height="391" alt="image" src="https://github.com/user-attachments/assets/de82bfca-5825-49e0-8885-2f12df0e0ee4" />
+
+fill fields with below content and press "Finish" button
+
+&nbsp;
+<img width="965" height="1080" alt="image" src="https://github.com/user-attachments/assets/e3511292-8ff3-4617-ac1b-458845b4c82c" />
+
+After some time you will get below window where you select "OpenOCD" tab" and press "Debug"
+
+&nbsp;
+<img width="1406" height="1180" alt="image" src="https://github.com/user-attachments/assets/f23f1f47-d321-4c62-a6d9-c88f8cf468a7" />
+
+
+debug window look like this
+
+&nbsp;
+<img width="2447" height="1178" alt="image" src="https://github.com/user-attachments/assets/1112f6c4-f4ba-49d2-b797-4b3a2a2d9d61" />
+
+- press "run" buttoen 
+
+as result youget the SiFive logo on com-port and blue Led is blinking.
+
+&nbsp;
+<img width="1915" height="1152" alt="image" src="https://github.com/user-attachments/assets/74eb7b68-1757-45b0-b807-0a6c41cab317" />
+
+&nbsp;
+https://github.com/user-attachments/assets/10b7d359-9f3e-4748-a09a-9690f148bcb7
+
+
+
+</details>
+ 
 ## Edge AI Orientation & Hardware Primer
 <details>
 <summary>Edge AI Orientation & Hardware Primer</summary>
