@@ -76,6 +76,10 @@ as result youget the SiFive logo on com-port and blue Led is blinking.
 &nbsp;
 https://github.com/user-attachments/assets/10b7d359-9f3e-4748-a09a-9690f148bcb7
 
+what we need addition is a google colab account!
+
+&nbsp;
+<img width="1934" height="991" alt="image" src="https://github.com/user-attachments/assets/025ab45e-263e-4015-aed5-ff6e090da00a" />
 
 
 </details>
@@ -86,8 +90,20 @@ https://github.com/user-attachments/assets/10b7d359-9f3e-4748-a09a-9690f148bcb7
 
 - AI On A Microchip - Edge Computing With VSDSquadron Pro RISC-V Board
 
+<ins>key components of the VSDSquadron PRO RISC-V development board</ins>
+
+&nbsp;
+<img width="1700" height="944" alt="image" src="https://github.com/user-attachments/assets/393a1734-444e-4686-9fc5-2871af46743e" />
 
 - Understanding Your RISC-V Board - Prerequisites to AI on 16KB RAM
+
+for our model we use the 32Mbit SPI Flash.
+
+detail spec of the board that we use:
+
+&nbsp;
+<img width="1725" height="965" alt="image" src="https://github.com/user-attachments/assets/a4cd8a68-50fd-4358-9e67-71b1347fb46f" />
+
 
 </details>
 
