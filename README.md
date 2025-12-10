@@ -210,6 +210,18 @@ class Model():
 &nbsp;
 <img width="940" height="619" alt="image" src="https://github.com/user-attachments/assets/e3d8cfcb-878f-4595-ae50-02ceb3080ac6" />
 
+**load dataset into the model**
+
+``` py
+model = Model(learning_rate=0.01, interations=1000)
+model.fit(X,y)
+```
+
+**red line show presiction**
+
+&nbsp;
+<img width="852" height="765" alt="image" src="https://github.com/user-attachments/assets/79d718d0-dadc-4f42-9aa2-f257f5538b13" />
+
 
 - Visualizing Gradient Descent in Action
   
