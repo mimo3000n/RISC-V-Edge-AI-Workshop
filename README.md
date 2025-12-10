@@ -121,7 +121,8 @@ detail spec of the board that we use:
   
 - Gradient Descent Unlocked - Build Your First AI Model From Scratch
 
-  now we start im colab.
+  now we start im colab. "https://colab.research.google.com/drive/1S7MID5a163q5FS3oWriPtIATu4E-qOOa#scrollTo=VKW5VEUKKmQR"
+
 
   first we import dataset "studentscored.csv"
   second we import pyton libs and initialize them
@@ -137,9 +138,79 @@ import matplotlib.pyplot as plt
 &nbsp;
 <img width="1503" height="262" alt="image" src="https://github.com/user-attachments/assets/d9b623e5-91e5-479d-ab40-d410c1fd8184" />
 
+import now dataset and print dataset
+
+``` py
+dataset = pd.read_csv('studentscores.csv')
+print(dataset)
+```
+
+&nbsp;
+<img width="818" height="568" alt="image" src="https://github.com/user-attachments/assets/dc1bcedb-bf4c-47a2-a217-52d14bf7dedd" />
+
+**plot scatter of dataset**
+
+``` py
+
+dataset = pd.read_csv('studentscores.csv')
+plt.scatter(dataset['Hours'], dataset['Scores'])
+plt.show()
+
+```
+
+&nbsp;
+<img width="993" height="529" alt="image" src="https://github.com/user-attachments/assets/6f8a6cb3-5ab6-45fb-a72b-cda1dcb0c8c3" />
+
+**now we split dataset into x & y column
+
+``` py
+X=dataset.iloc[:,:-1].values
+y=dataset.iloc[:,1].values
+
+```
+
+**and we print x & y**
+
+&nbsp;
+<img width="835" height="691" alt="image" src="https://github.com/user-attachments/assets/accf00e5-eba1-4947-8927-95e69605b39b" />
+
+**Model definition**
+
+``` py
+class Model():
+  def __init__(self,learning_rate, interations):
+    self.learning_rate = learning_rate
+    self.interations = interations
+    
+  def predict(self,x):
+    return x.dot(self.slope) + self,const
+
+  def fit(self,x,y):
+    self.m, self.n = x.shape
+    self.slope = np.zeros(self.n)
+    self.const = 0
+    self.X = X
+    self.y = y
+    
+
+    for i in range(self.interations):
+      self.update_weights()
+      return self
+
+  def update_weights(self):
+    Y_pred = self.predict(self.X)
+    dW = - (2 * (self.X.T).dot(self.y - Y_pred)) / self.m
+    db = - 2 * np.sum(self.y - Y_pred) / self.m
+
+    self.slope -= self.learning_rate * dW
+    self.const -= self.learning_rate * db
+    return self
+```
+
+&nbsp;
+<img width="940" height="619" alt="image" src="https://github.com/user-attachments/assets/e3d8cfcb-878f-4595-ae50-02ceb3080ac6" />
 
 
-  
 - Visualizing Gradient Descent in Action
   
 - Predicting Startup Profits – AI for Business Decisions
