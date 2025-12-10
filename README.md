@@ -76,11 +76,6 @@ as result youget the SiFive logo on com-port and blue Led is blinking.
 &nbsp;
 https://github.com/user-attachments/assets/10b7d359-9f3e-4748-a09a-9690f148bcb7
 
-what we need addition is a google colab account!
-
-&nbsp;
-<img width="1934" height="991" alt="image" src="https://github.com/user-attachments/assets/025ab45e-263e-4015-aed5-ff6e090da00a" />
-
 
 </details>
  
@@ -90,10 +85,11 @@ what we need addition is a google colab account!
 
 - AI On A Microchip - Edge Computing With VSDSquadron Pro RISC-V Board
 
-<ins>key components of the VSDSquadron PRO RISC-V development board</ins>
+**key components of the VSDSquadron PRO RISC-V development board**
 
 &nbsp;
 <img width="1700" height="944" alt="image" src="https://github.com/user-attachments/assets/393a1734-444e-4686-9fc5-2871af46743e" />
+
 
 - Understanding Your RISC-V Board - Prerequisites to AI on 16KB RAM
 
@@ -104,6 +100,10 @@ detail spec of the board that we use:
 &nbsp;
 <img width="1725" height="965" alt="image" src="https://github.com/user-attachments/assets/a4cd8a68-50fd-4358-9e67-71b1347fb46f" />
 
+**what we need addition is a google colab account!**
+
+&nbsp;
+<img width="1934" height="991" alt="image" src="https://github.com/user-attachments/assets/025ab45e-263e-4015-aed5-ff6e090da00a" />
 
 </details>
 
@@ -112,8 +112,33 @@ detail spec of the board that we use:
 <summary>ML Foundations (Regression & Optimization)</summary>
 
 - Best-Fitting Lines 101 - Getting Started With ML
+
+ **we try to minimze errors as much as possible**
+
+&nbsp;
+<img width="2784" height="1200" alt="image" src="https://github.com/user-attachments/assets/59b77fb1-bef3-43cf-8c20-c345f9960ec8" />
+
   
 - Gradient Descent Unlocked - Build Your First AI Model From Scratch
+
+  now we start im colab.
+
+  first we import dataset "studentscored.csv"
+  second we import pyton libs and initialize them
+
+``` py
+
+import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
+
+```
+
+&nbsp;
+<img width="1503" height="262" alt="image" src="https://github.com/user-attachments/assets/d9b623e5-91e5-479d-ab40-d410c1fd8184" />
+
+
+
   
 - Visualizing Gradient Descent in Action
   
