@@ -138,7 +138,7 @@ import matplotlib.pyplot as plt
 &nbsp;
 <img width="1503" height="262" alt="image" src="https://github.com/user-attachments/assets/d9b623e5-91e5-479d-ab40-d410c1fd8184" />
 
-import now dataset and print dataset
+**import now dataset and print dataset**
 
 ``` py
 dataset = pd.read_csv('studentscores.csv')
@@ -161,7 +161,7 @@ plt.show()
 &nbsp;
 <img width="993" height="529" alt="image" src="https://github.com/user-attachments/assets/6f8a6cb3-5ab6-45fb-a72b-cda1dcb0c8c3" />
 
-**now we split dataset into x & y column
+**now we split dataset into x & y column**
 
 ``` py
 X=dataset.iloc[:,:-1].values
@@ -217,7 +217,7 @@ model = Model(learning_rate=0.01, interations=1000)
 model.fit(X,y)
 ```
 
-**red line show presiction**
+**red line show prediction**
 
 &nbsp;
 <img width="852" height="765" alt="image" src="https://github.com/user-attachments/assets/79d718d0-dadc-4f42-9aa2-f257f5538b13" />
