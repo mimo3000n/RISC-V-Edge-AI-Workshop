@@ -304,11 +304,186 @@ class LinearRegression:
 
 
 ```
+
+run model with diffent interation and see how loss is getting smaller if interations are increasing:
+
+``` py
+
+model = LinearRegression()
+parameters, loss = model.train(X, y, learning_rate=0.01, iters=100)
+
+```
+
+&nbsp;
+<img width="828" height="1075" alt="image" src="https://github.com/user-attachments/assets/3fa81d15-6704-43a1-b8c2-5daed757f0e5" />
+
   
 - Predicting Startup Profits – AI for Business Decisions
+
+Now let import another dataset "50_Startups.csv"
+
+``` py
+
+dataset = pd.read_csv('50_Startups.csv')
+X = dataset.iloc[:, :-1].values
+Y = dataset.iloc[:, -1].values
+
+```
+
+and print X values:
+
+&nbsp;
+<img width="511" height="919" alt="image" src="https://github.com/user-attachments/assets/6d7bafed-e4c8-410b-a1f5-c7b189cd3986" />
+
+Now we import our model:
+
+``` py
+
+from sklearn.linear_model import LinearRegression
+regressor = LinearRegression()
+
+```
+
+we split now dataset into dataset for testing and training.
+
+``` py
+
+from sklearn.model_selection  import train_test_split
+X_train, X_test, Y_train, Y_test = train_test_split(X, Y, test_size = 0.2, random_state = 0)
+
+```
+
+now lets train our training model
+
+``` py
+
+regressor.fit(X_train, Y_train)
+```
+
+&nbsp;
+<img width="953" height="289" alt="image" src="https://github.com/user-attachments/assets/c2c4d20e-7175-487a-b258-82530b2b4034" />
+
+now let run prediction and print out prediction
+
+``` py
+
+y_pred = regressor.predict(X_test)
+print(y_pred)
+```
+
+&nbsp;
+<img width="807" height="163" alt="image" src="https://github.com/user-attachments/assets/5aaafbca-9aaa-4a54-a6e5-d504309d93f4" />
+
+
+now we look into actual an predicted values
+
+``` py
+
+for i, (pred, actual) in enumerate(zip(y_pred, Y_test)):
+  print(f"Sample {i+1}: Predicted {pred:.2f}, Actual {actual:.2f}")
+
+```
+
+&nbsp;
+<img width="749" height="302" alt="image" src="https://github.com/user-attachments/assets/2001e204-4ab5-4747-8cf2-dc675426b5fe" />
+
+now es print "Coeffficints" and "Intercept"
+
+``` py
+
+print("Coefficients", regressor.coef_)
+print("Intercept", regressor.intercept_)
+
+```
+
+&nbsp;
+<img width="720" height="185" alt="image" src="https://github.com/user-attachments/assets/1cdcfe1c-9f6c-49ef-959c-a961e91b8390" />
+
+``` txt
+
+Y = 0.77884104x1 + 0.0293919x2 0.03471025*x3
+
+```
+
   
 - Degree Up - Fitting Complex Patterns for Edge AI
-  
+
+Now we load our student dataset again:
+
+``` py
+
+dataset =  pd.read_csv('studentscores.csv')
+plt.scatter(dataset['Hours'], dataset['Scores'])
+plt.show()
+
+```
+
+&nbsp;
+<img width="710" height="537" alt="image" src="https://github.com/user-attachments/assets/10f28183-e83e-4b7e-844c-871f9fb69ab4" />
+
+
+now generate train dataset
+
+``` py
+
+from sklearn.model_selection  import train_test_split
+X_train, X_test, Y_train, Y_test = train_test_split(X, Y, test_size = 0.2, random_state = 0)
+
+```
+
+now we import a polynomial preprocessor and print poly out
+
+``` py
+
+from sklearn.preprocessing import PolynomialFeatures
+poly = PolynomialFeatures(degree=3)
+X_poly = poly.fit_transform(X_train) 
+print(X_poly)
+
+```
+
+&nbsp;
+<img width="755" height="783" alt="image" src="https://github.com/user-attachments/assets/2b33763c-35db-4116-b811-909bc3a6e512" />
+
+now we transform
+
+``` py
+
+dataset =  pd.read_csv('studentscores.csv')
+plt.scatter(dataset['Hours'], dataset['Scores'])
+plt.show()
+
+X = dataset.iloc[:, :-1].values
+Y = dataset.iloc[:, -1].values
+
+```
+
+&nbsp;
+<img width="902" height="1142" alt="image" src="https://github.com/user-attachments/assets/378657d1-cf18-447c-98df-1d38c1b1c6da" />
+
+``` py
+
+generate the model
+
+``` py
+from sklearn.preprocessing import PolynomialFeatures
+poly = PolynomialFeatures(degree=3)
+X_poly = poly.fit_transform(X) 
+print(X_poly)
+
+model = LinearRegression()
+model.fit(X_poly, Y)
+```
+
+&nbsp;
+<img width="867" height="778" alt="image" src="https://github.com/user-attachments/assets/64091e31-71d5-4ab5-b1ca-a675f3510fbb" />
+
+
+
+
+
+
+
 - From Python to Silicon - Your Model Runs on RISC-V (Need VSDSQ Board)
 
 </details>
