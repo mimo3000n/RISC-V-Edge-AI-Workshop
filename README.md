@@ -496,6 +496,9 @@ model.fit(X_poly, Y)
 
  We open new colab session, call it "Socail_Network_Ads" and import data "Socal_Network_Ads.csv"
 
+ Colab: "https://colab.research.google.com/drive/157WT1Ue6nqG-jtQlkTm1O-R6OD0fk1Og#scrollTo=JPdk7_eGvmez"
+ 
+
  Data:
 
  &nbsp;
@@ -538,6 +541,39 @@ print(Y)
 &nbsp;
 
 <img width="938" height="775" alt="image" src="https://github.com/user-attachments/assets/8663b98e-6937-4754-8ab5-1794d6a7b304" />
+
+&nbsp;
+
+result of "print(y)"
+
+&nbsp;
+
+<img width="672" height="382" alt="image" src="https://github.com/user-attachments/assets/529be847-c839-4077-9e76-64b2cdd8cea1" />
+
+&nbsp;
+
+now we divide in train & test dataset:
+
+``` py
+
+from sklearn.model_selection import train_test_split
+x_train, x_test, y_train, y_test = train_test_split(x, y, test_size = 0.25, random_state = 0)
+
+```
+
+&nbsp;
+
+<img width="913" height="205" alt="image" src="https://github.com/user-attachments/assets/96ade8d4-3d04-495e-914e-85ad578a174f" />
+
+&nbsp;
+
+now let visualize data:
+
+``` py
+
+
+
+``` 
 
 
 
