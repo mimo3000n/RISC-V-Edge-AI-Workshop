@@ -897,6 +897,94 @@ now we will look how we can implement this in a C basedcode
 
 - Deploying SVM Models on VSDSquadron PRO Boards - From Python to C (Need VSDSQ Board)
 
+create "svm_model.h"
+
+``` py
+
+print(classifier.coef_)
+print(classifier.intercept_)
+
+[[1.60291291 0.97138722]]
+[-0.76862169]
+
+weights = classifier.coef_
+bias = classifier.intercept_
+
+with open("svm_model.h", "w") as f:
+    f.write(f"#define NUM_CLASSES {weights.shape[0]}\n")
+    f.write(f"#define NUM_FEATURES {weights.shape[1]}\n")
+  
+    f.write("double weigths[NUM_CLASSSES][NUM_FEATURES] = {\n")
+    for row in weights:
+        f.write("    {"+ ", ".join(f"{v:.10f}" for v in row) + "},\n")
+    f.write("};\n\n")
+
+    f.write("double bias[NUM_CLASSES] = {" + ", ".join(f"{b:.10f}" for b in bias) + "};\n")
+
+print(" Exported SVM model to svm_model.h")
+
+```
+
+&nbsp;
+<img width="1185" height="717" alt="image" src="https://github.com/user-attachments/assets/fd92593a-6411-4f9c-af33-81c96f4d507d" />
+
+&nbsp;
+
+``` h
+#define NUM_CLASSES 1
+#define NUM_FEATURES 2
+double weigths[NUM_CLASSSES][NUM_FEATURES] = {
+    {1.6029129051, 0.9713872195},
+};
+
+double bias[NUM_CLASSES] = {-0.7686216858};
+
+```
+
+code to create "scaler.h"
+
+``` py
+
+mean =   sc.mean_
+scale = sc.scale_
+with open("scaler.h", "w") as f:
+    f.write(f"#define NUM_FEATURES {len(mean)}\n\n)")
+
+    f.write("double mean[NUM_FEATURES] = {\n")
+    f.write("    " + ", ".join(f"{m:.10f}" for m in mean) + "\n};\n\n")
+
+    f.write("double scale[NUM_FEATURES] = {\n}")
+    f.write("    " + ", ".join(f"{s:.10f}" for s in scale) + "\n};\n")
+
+print("Exported scaler parameter to scaler.h")
+
+```
+
+&nbsp;
+<img width="1170" height="868" alt="image" src="https://github.com/user-attachments/assets/ab398c17-a607-4ad0-b6d1-7029ca7d3f74" />
+
+&nbsp;
+
+scaler.h
+
+``` h
+
+#define NUM_FEATURES 2
+
+)double mean[NUM_FEATURES] = {
+    38.1266666667, 69583.3333333333
+};
+
+double scale[NUM_FEATURES] = {
+}    10.0977203148, 34490.9126518211
+};
+
+```
+
+now we go to SiFive Freedom Studio
+
+
+
 
 
 - Handwritten Digit Recognition with SVM - From MNIST to Embedded Boards
