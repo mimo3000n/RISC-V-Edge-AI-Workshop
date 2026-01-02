@@ -706,16 +706,121 @@ plt.show()
 this is predition line plot dividing data into two sectionsabout line people purchase.
 
 <img width="959" height="868" alt="image" src="https://github.com/user-attachments/assets/7015cd43-cb22-4bb1-aafb-86045f79fdb9" />
-%nbsp;
+&nbsp;
 
 
 - Implementing KNN Classifier in Python - Smarter Decision Boundaries
 
 now lets try to seperate data with a polygon or a specificshape to get better accuracy
+for that we implement a KNN classiefier meaning nearest neighbour principle.
 
+``` py
+
+
+from sklearn.neighbors import KNeighborsClassifier
+knn = KNeighborsClassifier(n_neighbors = 5)
+
+```
+
+now let train dataset
+
+``` py
+
+knn.fit(x_train, y_train)
+
+```
+
+now we check accuracy
+
+``` py
+
+y_pred = knn.predict(x_test)
+print(f"Test Accuracy (k=5): {accuracy_score(y_test, y_pred):.2f}")
+
+```
+
+&nbsp;
+<img width="824" height="409" alt="image" src="https://github.com/user-attachments/assets/681e69f4-4c7f-46ac-9af6-74bac6407e3f" />
+
+&nbsp;
+
+let create a linspace
+
+``` py
+
+x1_vals = np.linspace(-3, 3, 400)
+x2_vals = np.linspace(-3, 3, 400)
+x1, x2 = np.meshgrid(x1_vals, x2_vals)
+
+Z = knn.predict(np.c_[x1.ravel(), x2.ravel()])
+Z = Z.reshape(x1.shape)
+print(Z)
+
+```
+
+&nbsp;
+<img width="682" height="399" alt="image" src="https://github.com/user-attachments/assets/7b01805f-8247-4de5-a239-032281cf568e" />
+
+&nbsp;
+
+now we plot it out
+
+``` py
+
+import seaborn as sns
+plt.figure(figsize=(8,6))
+plt.contourf(x1, x2, Z, cmap=plt.cm.coolwarm, alpha=0.3)
+sns.scatterplot(x=x_train[:, 0], y=x_train[:, 1], hue=y_train, palette={
+                0: "blue", 1: "red"}, marker='o')
+plt.xlabel("Age")
+plt.ylabel("Estimated Salary")
+
+plt.show()
+
+```
+
+&nbsp;
+<img width="935" height="798" alt="image" src="https://github.com/user-attachments/assets/1fc62693-d3d4-4bfb-9762-8391d1ddc18b" />
+
+&nbsp;
+
+now we have a boundery with a better accuracy.
+thats how KNN classifier works!
 
 
 - From KNN to SVM - Smarter Models for Embedded Boards
+
+now we use SVC classifier using "linear" classifier
+
+``` py
+
+from sklearn.svm import SVC
+classifier = SVC(kernel = 'linear', random_state = 0)
+classifier.fit(x_train, y_train)
+
+```
+
+<img width="631" height="222" alt="image" src="https://github.com/user-attachments/assets/7a3237d3-2fc6-4e78-8cb6-50e329f9110d" />
+
+&nbsp;
+
+now lets carry out prediction and accouracy
+
+``` py
+
+y_pred = classifier.predict(x_test)
+accuracy = accuracy_score(y_test, y_pred)
+print("Accuracy: {:.2f}%".format(accuracy * 100)) 
+
+```
+
+&nbsp;
+<img width="668" height="184" alt="image" src="https://github.com/user-attachments/assets/b56338fe-1cf2-474b-ba80-980d1d4d961b" />
+
+&nbsp;
+
+
+
 
 - Deploying SVM Models on VSDSquadron PRO Boards - From Python to C (Need VSDSQ Board)
 
