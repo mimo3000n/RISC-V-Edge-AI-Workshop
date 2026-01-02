@@ -498,11 +498,9 @@ model.fit(X_poly, Y)
 
  Colab: "https://colab.research.google.com/drive/157WT1Ue6nqG-jtQlkTm1O-R6OD0fk1Og#scrollTo=JPdk7_eGvmez"
  
-
  Data:
-
+ 
  &nbsp;
-
  <img width="967" height="698" alt="image" src="https://github.com/user-attachments/assets/3a1249c0-d6f5-4f15-bc77-2b22580840e6" />
 
  Colab session:
