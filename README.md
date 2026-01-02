@@ -819,10 +819,85 @@ print("Accuracy: {:.2f}%".format(accuracy * 100))
 
 &nbsp;
 
+let's plot it out using a meshgrid and a contour
 
+```py
+
+from matplotlib.colors import ListedColormap
+x_set, y_set = x_train, y_train
+X1, X2 = np.meshgrid(np.arange(start = x_set[:, 0].min() - 1, stop = x_set[:, 0].max() + 1, step = 0.01),
+                     np.arange(start = x_set[:, 1].min() - 1, stop = x_set[:, 1].max() + 1, step = 0.01))
+plt.contourf(X1, X2, classifier.predict(np.array([X1.ravel(), X2.ravel()]).T).reshape(X1.shape),
+             alpha = 0.75, cmap = ListedColormap(('red', 'green'))) 
+plt.xlim(X1.min(), X1.max())
+plt.ylim(X2.min(), X2.max())  
+for i, j in enumerate(np.unique(y_set)):
+    plt.scatter(x_set[y_set == j, 0], x_set[y_set == j, 1],
+                c = ListedColormap(('red', 'green'))(i), label = j) 
+plt.title('SVM (Training set)')
+plt.xlabel('Age')
+plt.ylabel('Estimated Salary')
+plt.legend()
+plt.show()    
+
+```
+
+&nbsp;
+<img width="1038" height="848" alt="image" src="https://github.com/user-attachments/assets/671e2583-53d3-4ce5-b0db-f4b01598b468" />
+
+&nbsp;
+
+now lets find out the coefficient of the plane
+
+``` py
+
+print(classifier.coef_)
+print(classifier.intercept_)
+
+[[1.60291291 0.97138722]]
+[-0.76862169]
+```
+
+&nbsp;
+<img width="556" height="163" alt="image" src="https://github.com/user-attachments/assets/a9d62ee0-42d4-417a-92c5-084bd993536f" />
+
+&nbsp;
+
+now lets change SVC classifier from "linear" to "rbf"
+
+``` py
+
+from sklearn.svm import SVC
+classifier = SVC(kernel = 'rbf', random_state = 0)
+classifier.fit(x_train, y_train)
+
+```
+
+&nbsp;
+<img width="976" height="1128" alt="image" src="https://github.com/user-attachments/assets/ccef5750-6954-4241-9492-51d1055576d4" />
+
+&nbsp;
+
+we have higther accuracy and dual coefficient
+
+``` py
+
+print(classifier.dual_coef_)
+print(classifier.intercept_)
+
+```
+
+&nbsp;
+<img width="832" height="385" alt="image" src="https://github.com/user-attachments/assets/51aa6987-91d0-452f-9ab5-d744a234f3c8" />
+
+&nbsp;
+
+now we will look how we can implement this in a C basedcode
 
 
 - Deploying SVM Models on VSDSquadron PRO Boards - From Python to C (Need VSDSQ Board)
+
+
 
 - Handwritten Digit Recognition with SVM - From MNIST to Embedded Boards
 
