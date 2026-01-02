@@ -568,10 +568,84 @@ x_train, x_test, y_train, y_test = train_test_split(x, y, test_size = 0.25, rand
 now let visualize data:
 
 ``` py
+import seaborn as sns
+plt.figure(figsize=(8,6))
+sns.scatterplot(x=x_train[:, 0], y=x_train[:, 1], hue=y_train, palette={
+                0: "blue", 1: "red"}, marker='o')
+plt.xlabel("Age")
+plt.ylabel("Estimated Salary")
 
+plt.show()
 
+```
 
-``` 
+&nbsp;
+<img width="978" height="804" alt="image" src="https://github.com/user-attachments/assets/866200b9-4062-437d-b724-e1acc13069b8" />
+&nbsp;
+
+now we want to separte the plot in two differen parts, but befor we do that we scale the model down.
+
+``` px
+
+from sklearn.preprocessing import StandardScaler
+sc = StandardScaler()
+x_train = sc.fit_transform(x_train)
+x_test = sc.transform(x_test) 
+
+```
+and print x_test & x_train
+
+``` py
+
+print(x_train)
+print(x_test)
+
+```
+
+&nbsp;
+<img width="468" height="671" alt="image" src="https://github.com/user-attachments/assets/de898673-85d9-4776-93bf-597f130d6df1" />
+&nbsp;
+
+let plot it again
+
+``` py
+
+import seaborn as sns
+plt.figure(figsize=(8,6))
+sns.scatterplot(x=x_train[:, 0], y=x_train[:, 1], hue=y_train, palette={
+                0: "blue", 1: "red"}, marker='o')
+plt.xlabel("Age")
+plt.ylabel("Estimated Salary")
+
+plt.show()
+
+```
+
+&nbsp;
+<img width="898" height="759" alt="image" src="https://github.com/user-attachments/assets/f820716f-7b73-4658-a4a2-557736e53f2f" />
+&nbsp;
+
+let create a logistic regression model to separate dataset by line
+
+``` py
+
+from sklearn.linear_model import LogisticRegression
+classifier = LogisticRegression()
+classifier.fit(x_train, y_train)
+
+```
+
+now lets import some metrics
+
+``` py
+
+from sklearn.metrics import confusion_matrix, accuracy_score, classification_report, confusion_matrix
+
+```
+
+&nbsp;
+<img width="930" height="265" alt="image" src="https://github.com/user-attachments/assets/aab702e0-a66a-4c2a-a978-8b667b9a1b7e" />
+&nbsp;
 
 
 
