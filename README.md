@@ -647,11 +647,73 @@ from sklearn.metrics import confusion_matrix, accuracy_score, classification_rep
 <img width="930" height="265" alt="image" src="https://github.com/user-attachments/assets/aab702e0-a66a-4c2a-a978-8b667b9a1b7e" />
 &nbsp;
 
+lets create prediction
 
+``` py
 
+y_pred = classifier.predict(x_test)
+accuracy = accuracy_score(y_test, y_pred)
+print("Accuracy: {:.2f}%".format(accuracy * 100))
+
+```
+
+&nbsp
+<img width="602" height="170" alt="image" src="https://github.com/user-attachments/assets/7148a165-ec0a-4072-9e73-3f0a70bf9958" />
+
+&nbsp;
+
+before we plot we need classiefier coefficeient and intercep value
+
+``` py
+
+print("Coefficient:", classifier.coef_)
+print("Intercept:", classifier.intercept_)
+
+```
+
+&nbsp;
+<img width="550" height="208" alt="image" src="https://github.com/user-attachments/assets/3f85d500-bb18-4705-a3d6-735c5cd423dc" />
+&nbsp;
+
+we have 2 different codefficient's
+
+line equation will be:
+
+y = (-2.07665837 * x + 0.95217247)/1.11008221
+
+``` py
+
+import seaborn as sns
+x1 = np.linspace(-3, 3, 100)
+x2 = (-2.07665837 * x1 + 0.95217247)/1.11008221
+
+plt.figure(figsize=(8,6))
+plt.plot(x1, x2, color='green')
+sns.scatterplot(x=x_train[:, 0], y=x_train[:, 1], hue=y_train, palette={
+                0: "blue", 1: "red"}, marker='o')
+plt.xlabel("Age")
+plt.ylabel("Estimated Salary")
+
+plt.show()
+
+```
+
+&nbsp;
+<img width="959" height="868" alt="image" src="https://github.com/user-attachments/assets/576d2144-1a3a-45a7-87ab-446404b9fbd8" />
+
+&nbsp;
+
+this is predition line plot dividing data into two sectionsabout line people purchase.
+
+<img width="959" height="868" alt="image" src="https://github.com/user-attachments/assets/7015cd43-cb22-4bb1-aafb-86045f79fdb9" />
+%nbsp;
 
 
 - Implementing KNN Classifier in Python - Smarter Decision Boundaries
+
+now lets try to seperate data with a polygon or a specificshape to get better accuracy
+
+
 
 - From KNN to SVM - Smarter Models for Embedded Boards
 
