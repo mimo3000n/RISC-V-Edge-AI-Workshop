@@ -494,6 +494,55 @@ model.fit(X_poly, Y)
 
 - From Regression to Classification - Your First Binary AI Model
 
+ We open new colab session, call it "Socail_Network_Ads" and import data "Socal_Network_Ads.csv"
+
+ Data:
+
+ &nbsp;
+
+ <img width="967" height="698" alt="image" src="https://github.com/user-attachments/assets/3a1249c0-d6f5-4f15-bc77-2b22580840e6" />
+
+ Colab session:
+
+ &nbsp;
+
+import needed libs
+
+ ``` py
+
+import numpy as np
+import matplotlib.pyplot as plt
+import pandas as pd
+
+```
+
+next we import dataset
+
+``` py
+
+dataset = pd.read_csv('Social_Network_Ads.csv')
+X = dataset.iloc[:, [1,2]].values
+y = dataset.iloc[:, 3].values
+
+```
+
+we print X,Y
+
+``` py
+
+print(X)
+print(Y)
+
+```
+
+&nbsp;
+
+<img width="938" height="775" alt="image" src="https://github.com/user-attachments/assets/8663b98e-6937-4754-8ab5-1794d6a7b304" />
+
+
+
+
+
 - Implementing KNN Classifier in Python - Smarter Decision Boundaries
 
 - From KNN to SVM - Smarter Models for Embedded Boards
