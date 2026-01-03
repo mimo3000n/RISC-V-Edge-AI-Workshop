@@ -983,6 +983,12 @@ double scale[NUM_FEATURES] = {
 
 now we go to SiFive Freedom Studio
 
+paste scaler.h & svm_model.h into src tree
+
+&nbsp;
+<img width="540" height="892" alt="image" src="https://github.com/user-attachments/assets/a86872ec-04c2-46ea-90d3-255cd32b35d5" />
+
+&nbsp;
 
 
 
