@@ -1238,6 +1238,27 @@ plt.show()
 &nbsp;
 <img width="1049" height="990" alt="image" src="https://github.com/user-attachments/assets/fe7548e0-e362-4881-ba78-3c2616350028" />
 
+&nbsp;
+
+now let plot erverthing with prediced and actual labels
+
+``` py
+
+fig, axes = plt.subplots(2, 5, figsize=(10, 5))
+for i, ax in enumerate(axes.ravel()):
+    ax.imshow(X_test[i].reshape(28, 28), cmap = 'gray')
+    ax.set_title(f"Label: {y_test[i]}, Predicted {y_pred[i]}")
+    ax.axis('off')
+plt.tight_layout()
+plt.show()    
+
+```
+
+&nbsp;
+<img width="1127" height="707" alt="image" src="https://github.com/user-attachments/assets/4fea9cae-4f87-478f-ba63-d813df87a62f" />
+
+&nbsp;
+
 
 
 
