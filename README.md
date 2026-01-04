@@ -1153,6 +1153,93 @@ X_test_scaled = scaler.transform(X_test)
 
 &nbsp;
 
+let pot images
+
+``` py
+
+fig, axes = plt.subplots(2, 5, figsize=(10, 5))
+for i, ax in enumerate(axes.ravel()):
+    ax.imshow(X_train[i].reshape(28, 28), cmap = 'gray')
+    ax.set_title(f"Label: {y_train[i]}")
+    ax.axis('off')
+plt.tight_layout()
+plt.show()
+
+```
+
+&nbsp;
+
+<img width="1235" height="725" alt="image" src="https://github.com/user-attachments/assets/3b097dee-750b-4ec1-b24d-421821b95ee8" />
+
+&nbsp;
+
+now we create our classifierwith 10interations cause we have a large dataset
+
+``` py
+
+clf = LinearSVC(dual=False, max_iter=10)
+
+```
+
+now lets train data,it will take some time!
+
+``` py
+
+clf.fit(X_train_scaled, y_train)  
+
+```
+&nbsp;
+<img width="1440" height="178" alt="image" src="https://github.com/user-attachments/assets/f6f88feb-8fc7-4ba9-9ef3-986200d0a194" />
+
+&nbsp;
+
+now we do prediction and print it
+
+``` py
+
+y_pred = clf.predict(X_test_scaled)
+print("Accuracy:", accuracy_score(y_test, y_pred))
+```
+
+&nbsp;
+<img width="597" height="185" alt="image" src="https://github.com/user-attachments/assets/3d4c4f00-2cbb-409e-a564-86b5171c4860" />
+
+&nbsp;
+
+we print now classification report:
+
+``` py
+
+print(classification_report(y_test, y_pred))
+
+```
+
+%nbsp;
+<img width="875" height="400" alt="image" src="https://github.com/user-attachments/assets/673ed679-7ff6-41b1-8b7d-e4b32d4fafbb" />
+
+&nbsp;
+
+let create a heatmap:
+
+``` py
+
+from sklearn.metrics import confusion_matrix
+import seaborn as sns
+cm = confusion_matrix(y_test, y_pred)
+plt.figure(figsize=(10, 8))
+sns.heatmap(cm, annot=True, fmt='d', cmap='Blues', xticklabels=np.unique(y_test), yticklabels=np.unique(y_test))
+plt.title('Confusion Matrix')
+plt.xlabel('Predicted Lable')
+plt.ylabel('True Lable')
+plt.show()
+
+```
+
+&nbsp;
+<img width="1049" height="990" alt="image" src="https://github.com/user-attachments/assets/fe7548e0-e362-4881-ba78-3c2616350028" />
+
+
+
 
 
 
