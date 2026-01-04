@@ -1058,6 +1058,104 @@ then change code and rebuild !
 
 - Handwritten Digit Recognition with SVM - From MNIST to Embedded Boards
 
+now we start working on something complex using a dataset of handwritten images.
+for that we start opening a new colab notebook - 
+
+here we load tensorflow classes & dataset
+
+``` py
+
+from tensorflow.keras.datasets import mnist
+
+```
+now we have to import libs & classes
+
+``` py
+
+from sklearn.model_selection import train_test_split
+from sklearn.preprocessing import StandardScaler
+from sklearn.svm import LinearSVC, SVC
+from sklearn.metrics import classification_report, accuracy_score
+from matplotlib import pyplot as plt
+import numpy as np
+import pandas as pd
+
+```
+
+&nbsp:
+<img width="869" height="555" alt="image" src="https://github.com/user-attachments/assets/76b64b70-2969-4a7f-8ab1-d94d30c5c5d1" />
+
+&nbsp;
+
+now we split data ino training and test
+
+``` py
+
+(X_train, y_train), (X_test, y_test) = mnist.load_data()
+
+```
+
+&nbsp;
+<img width="982" height="215" alt="image" src="https://github.com/user-attachments/assets/32bb4497-cbff-4a8a-bc2f-2d35ed9d8148" />
+
+&nbsp;
+
+let print data
+
+``` py
+
+print(X_train.shape)
+print(X_test.shape)
+
+```
+
+&nbsp;
+
+<img width="469" height="149" alt="image" src="https://github.com/user-attachments/assets/a5b45a67-5681-4414-8303-13e28fce40fd" />
+
+we have 60000 training images and 10000 test images, each image is 28x28
+
+now we flatten all images
+
+``` py
+
+X_train = X_train.reshape(-1, 28 * 28).astype(np.float32) 
+X_test = X_test.reshape(-1, 28 *28).astype(np.float32)
+
+```
+
+print result
+
+``` py
+
+print(X_train.shape)
+print(X_test.shape)
+
+```
+
+&nbsp;
+<img width="692" height="207" alt="image" src="https://github.com/user-attachments/assets/c1c026a4-2c7d-4e09-81a7-a76ece8471bb" />
+
+&nbsp;
+
+no we have to scale using standard scaler
+
+``` py
+
+scaler = StandardScaler()
+X_train_scaled = scaler.fit_transform(X_train)
+X_test_scaled = scaler.transform(X_test) 
+
+```
+
+&nbsp;
+<img width="652" height="124" alt="image" src="https://github.com/user-attachments/assets/5e348f87-8975-44c5-ba56-423d530c44d1" />
+
+&nbsp;
+
+
+
+
 - Running MNIST Digit Recognition on the VSDSquadron PRO Board
 
 </details>
