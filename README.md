@@ -1044,7 +1044,16 @@ int main () {
 &nbsp;
 <img width="2452" height="1206" alt="image" src="https://github.com/user-attachments/assets/45e82d24-9beb-41b1-9fdc-1fa3ae3a7a34" />
 
+if you change something in source code you have to "Terminate and Remoce" the current session. To do so, do a left mouseclick on Debud OpenOCD Launch.
 
+&nbsp;
+<img width="829" height="644" alt="image" src="https://github.com/user-attachments/assets/1bad7b84-a26d-48ac-818f-4b125ceab622" />
+
+&nbsp;
+
+here you find "Terminate and Remove" after right mouse click!
+
+then change code and rebuild !
 
 
 - Handwritten Digit Recognition with SVM - From MNIST to Embedded Boards
