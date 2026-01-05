@@ -1985,11 +1985,34 @@ int test_labels[NUM_TEST_IMAGES] = { 7, 2, 1, 0, 4, 1, 4, 9, 5, 9 };
 <details>
 <summary>Neural Networks on RISC-V Microcontrollers</summary>
 
+&nbsp;
+<img width="1756" height="1047" alt="image" src="https://github.com/user-attachments/assets/8cd4b3b0-caef-4b4b-9b45-41804a5fcc6d" />
+
+&nbsp;
+<img width="1756" height="1047" alt="image" src="https://github.com/user-attachments/assets/5755a038-ebde-4a8c-830c-3af75e9a8212" />
+
+&nbsp;
+<img width="1487" height="990" alt="image" src="https://github.com/user-attachments/assets/84579b83-86f2-4eaa-92c3-6a70f9271989" />
+
+&nbsp;
+<img width="1716" height="988" alt="image" src="https://github.com/user-attachments/assets/8aeeb6e0-c228-428f-889b-98510222ccd3" />
+
+&nbsp;
+<img width="1564" height="994" alt="image" src="https://github.com/user-attachments/assets/7ca5574f-a70a-4966-960c-280fd66bad2a" />
+
+&nbsp;
+<img width="1560" height="995" alt="image" src="https://github.com/user-attachments/assets/3d826f78-32bb-4073-b044-7346629a693e" />
+
+&nbsp;
+
 </details>
 
 ## Advanced Quantization & Deployment
 <details>
 <summary>Advanced Quantization & Deployment</summary>
+
+&nbsp;
+<img width="1791" height="978" alt="image" src="https://github.com/user-attachments/assets/7a2e97e4-67b4-4e30-85b6-8fad8533a242" />
 
 </details>
 
