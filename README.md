@@ -2014,6 +2014,58 @@ int test_labels[NUM_TEST_IMAGES] = { 7, 2, 1, 0, 4, 1, 4, 9, 5, 9 };
 &nbsp;
 <img width="1791" height="978" alt="image" src="https://github.com/user-attachments/assets/7a2e97e4-67b4-4e30-85b6-8fad8533a242" />
 
+&nbsp;
+<img width="1791" height="980" alt="image" src="https://github.com/user-attachments/assets/b2511c8a-64b1-439a-87c9-aaad8862afb6" />
+
+&nbsp;
+<img width="1793" height="978" alt="image" src="https://github.com/user-attachments/assets/10acef60-9676-423c-b7d3-30d1ae7d22e4" />
+
+&nbsp;
+<img width="1793" height="976" alt="image" src="https://github.com/user-attachments/assets/bd536cbc-0d21-46bd-83fc-c7036ba0cd3c" />
+
+&nbsp;
+
+
+now let implement our neural network
+
+```py
+
+from sklearn.datasets import load_digits
+from sklearn.model_selection import train_test_split
+
+```
+
+load data in X,y
+
+``` py
+
+X, y = load_digits(return_X_y=True)
+
+```
+
+divide data into test and train
+
+``` py
+
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)v
+
+from sklearn.neural_network import MLPClassifier
+from sklearn.metrics import accuracy_score
+
+mlp = MLPClassifier(hidden_layer_sizes=(64,32,) , activation='relu', solver='adam', max_iter=300)
+
+mlp.fit(X_train, y_train)
+
+print(f"Accuracy: {accuracy_score(y_test, y_pred):.2f}")
+
+```
+
+&nbsp;
+<img width="1071" height="627" alt="image" src="https://github.com/user-attachments/assets/8bd51615-a023-433c-9ec9-8ef6be254698" />
+
+&nbsp;
+
+
 </details>
 
 
