@@ -1760,6 +1760,9 @@ int8 bias[NUM_CLASSES] = {-102, -127, -62, -68, -94, -65, -93, -106, -55, -81};
 
 ```
 
+to move data to flash memory we have to make variabele as const
+
+
 
 
 - Post-Training Quantization - From 68KB Overflow to MCU-Ready AI
