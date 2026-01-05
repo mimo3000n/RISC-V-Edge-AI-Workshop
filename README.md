@@ -1259,8 +1259,28 @@ plt.show()
 
 &nbsp;
 
+now lets plot images which were misidentified
 
+``` py
 
+misclassified_indices = np.where(y_test != y_pred)[0]
+plt.figure(figsize=(15,5))
+for i, index in enumerate(misclassified_indices[:10]):
+    plt.subplot(2, 5, i+1)
+    plt.imshow(X_test[i].reshape(28, 28), cmap = 'gray')
+    plt.title(f"True: {y_test[index]}\nPred: {y_pred[index]}")
+    plt.axis('off')
+plt.tight_layout()
+plt.show
+
+```
+
+&nbsp;
+<img width="1488" height="742" alt="image" src="https://github.com/user-attachments/assets/8d3cff52-29fa-472d-bdb0-4f03ca97c556" />
+
+&nbsp;
+
+now we move to a much faster implementation of this recognition on our bouard
 
 
 
