@@ -1283,8 +1283,127 @@ plt.show
 now we move to a much faster implementation of this recognition on our bouard
 
 
-
 - Running MNIST Digit Recognition on the VSDSquadron PRO Board
+
+before we upload to our board we have to find out our coeficiants, weihgts, biases
+
+``` py
+
+weights = clf.coef_
+biases = clf.intercept_
+print(weights.shape, biases)
+
+```
+
+&nbsp;
+<img width="994" height="187" alt="image" src="https://github.com/user-attachments/assets/a176d386-734d-4cea-9e02-da8ee84f99fa" />
+
+now we export to svm_model.h
+
+``` py
+
+with open("svm_model.h", "w") as f:
+    f.write(f"#define NUM_CLASSES {weights.shape[0]}\n")
+    f.write(f"#define NUM_FEATURES {weights.shape[1]}\n")
+
+    f.write("double weigths[NUM_CLASSES][NUM_FEATURES] = {\n")
+    for row in weights:
+        f.write("    {"+ ", ".join(f"{v:.10f}" for v in row) + "},\n")
+    f.write("};\n\n")
+
+    f.write("double bias[NUM_CLASSES] = {" + ", ".join(f"{b:.10f}" for b in biases) + "};\n")
+
+print(" Exported SVM model to svm_model.h")
+
+```
+
+&nbsp;
+<img width="1221" height="741" alt="image" src="https://github.com/user-attachments/assets/241ce954-7c4c-40f1-ba48-773093b03853" />
+
+&nbsp;
+
+similare we dowload our scales in "scales.h"
+
+``` py
+
+mean =   scaler.mean_
+scale = scaler.scale_
+with open("scaler.h", "w") as f:
+    f.write(f"#define NUM_FEATURES {len(mean)}\n\n)")
+
+    f.write("double mean[NUM_FEATURES] = {\n")
+    f.write("    " + ", ".join(f"{m:.10f}" for m in mean) + "\n};\n\n")
+
+    f.write("double scale[NUM_FEATURES] = {\n}")
+    f.write("    " + ", ".join(f"{s:.10f}" for s in scale) + "\n};\n")
+
+print("Exported scaler parameter to scaler.h")
+
+```
+
+&nbsp;
+<img width="1117" height="899" alt="image" src="https://github.com/user-attachments/assets/ffe61c64-3958-4e7e-a6ca-1da06b4ea35e" />
+
+&nbsp;
+
+now we import .h files into FreedomStudio
+
+&nbsp;
+<img width="958" height="719" alt="image" src="https://github.com/user-attachments/assets/f38b0aae-f3a6-4cde-b17b-49d073eb643d" />
+
+&npsp;
+
+since we have multiple classes we have to modify our predic funcion
+
+``` c
+
+
+
+```
+
+now we have to export images
+
+``` py
+
+NUM_IMAGES_TO_EXPORT = 10
+
+assert X_test.shape[1] == 784
+X_sample = X_test[:NUM_IMAGES_TO_EXPORT]
+y_sample = y_test[:NUM_IMAGES_TO_EXPORT]
+
+def export_test_images_to_c(images, labels, filename="test_image.h"):
+  num_images, num_features = images.shape
+  with open(filename, "w") as f:
+    f.write(f"ifndef TEST_IMAGES_H\n#define TEST_IMAGES_H\n\n")
+    f.write(f"#define NUM_TEST_IMAGES {num_images}\n")
+    f.write(f"#define NUM_FEATURES {num_features}\n\n")
+
+    # Write image data
+    f.write("float test_images[NUM_TEST_IMAGES][NUM_FEATURES] = {{\n")
+    for img in images:
+        f.write("    { " + ", ".join(f"{px:.6f}" for px in img) + " },\n")
+    f.write("};\n\n")
+
+    # Write labels (as integer)
+    f.write(f"int test_labels[NUM_TEST_IMAGES] = {{ ")
+    f.write(", ".join(str(label) for label in labels))
+    f.write(" };\n\n")
+
+    f.write("#endif // TEST_IMAGES_H\n")
+
+  print(f"Exported {num_images} test images to {filename}")
+
+export_test_images_to_c(X_sample, y_sample, "test_images.h")
+
+```
+
+&nbsp;
+<img width="1086" height="749" alt="image" src="https://github.com/user-attachments/assets/a2af95a9-93ee-4928-88c3-0fd256d42149" />
+
+&nbsp;
+
+
+
 
 </details>
 
